@@ -35,11 +35,16 @@ dist[n] ^ 2 = change[n].x ^ 2 + change[n].y ^ 2 + change[n].z ^ 2
 Ending Math
 ]]--
 
---Finds two positions for 
+function createAngle(p1, p2)
+    local p1To2 = p2 - p1
+    return p1To2 / p1To2:length()
+end
 
 local newPos = nil
 --Finds a circle which the enemy can be at the edge of
 do
-    local circle = {} --position, rotation and radius
+    local circle = {} --position, rotation (roll, pitch, yaw) and radius
     do
-        local 
+        local line = {pos[1], pos[2]}
+        
+        
