@@ -32,3 +32,13 @@ dist[n] ^ 2 = change[n].x ^ 2 + change[n].y ^ 2 + change[n].z ^ 2
             math.sqrt(dist[4] ^ 2 - change[4].x ^ 2 - change[4].z ^ 2) = change[4].y
             math.sqrt(dist[4] ^ 2 - change[4].x ^ 2 - change[4].y ^ 2) = change[4].z
         
+--Ending Math
+
+--Finds two positions for 
+
+local newPos = nil
+--Finds a circle which the enemy can be at the edge of
+do
+    local circle = {} --position, rotation and radius
+    do
+        local 
