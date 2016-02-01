@@ -32,7 +32,8 @@ dist[n] ^ 2 = change[n].x ^ 2 + change[n].y ^ 2 + change[n].z ^ 2
             math.sqrt(dist[4] ^ 2 - change[4].x ^ 2 - change[4].z ^ 2) = change[4].y
             math.sqrt(dist[4] ^ 2 - change[4].x ^ 2 - change[4].y ^ 2) = change[4].z
         
---Ending Math
+Ending Math
+]]--
 
 --Finds two positions for 
 
