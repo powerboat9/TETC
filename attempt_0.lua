@@ -5,11 +5,13 @@ local gps3 = vector.new(tArgs[7], tArgs[8], tArgs[9])
 local gps4 = vector.new(tArgs[10], tArgs[11], tArgs[12])
 
 local function toDegrees(angle)
-    --Do This
+    --TODO: DO
 
 local function fromDegrees(x, y)
     local newVect = vector.new(math.sin(x), 0, math.cos(x))
-    newVect.y, newVect.z = math.sin(y), newVect
+    newVect.x, newVect.y, newVect.z = newVect.x * math.cos(y), math.sin(y), newVect.z * math.cos(y) --Could compress, but won't
+    return newVect
+end
 
 local function rotate(point, object, shift)
     local xDegrees, yDegrees = toDegrees((object - point):normalize())
