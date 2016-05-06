@@ -4,6 +4,20 @@ local gps2 = vector.new(tArgs[4], tArgs[5], tArgs[6])
 local gps3 = vector.new(tArgs[7], tArgs[8], tArgs[9])
 local gps4 = vector.new(tArgs[10], tArgs[11], tArgs[12])
 
+local function toDegrees(angle)
+    --Do This
+
+local function fromDegrees(x, y)
+    local newVect = vector.new(math.sin(x), math.cos(y), 0)
+
+local function rotate(point, object, shift)
+    local xDegrees, yDegrees = toDegrees((object - point):normalize())
+    local appendX, appendY = toDegrees(shift)
+    xDegrees = (xDegrees + appendX) % 360
+    yDegrees = (yDegrees + appendY) % 360
+    return (object - point):length() * fromDegrees(xDegrees, yDegrees)
+end
+
 function trilaterate(v1, d1, v2, d2, v3, d3, v4, d4)
     if not (v1 and d1 and v2 and d2 and v3 and d3 and v4 and d4) then
         return false, 1
