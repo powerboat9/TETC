@@ -8,7 +8,8 @@ local function toDegrees(angle)
     --Do This
 
 local function fromDegrees(x, y)
-    local newVect = vector.new(math.sin(x), math.cos(y), 0)
+    local newVect = vector.new(math.sin(x), 0, math.cos(x))
+    newVect.y, newVect.z = math.sin(y), newVect
 
 local function rotate(point, object, shift)
     local xDegrees, yDegrees = toDegrees((object - point):normalize())
