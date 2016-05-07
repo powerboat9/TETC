@@ -5,7 +5,8 @@ local gps3 = vector.new(tArgs[7], tArgs[8], tArgs[9])
 local gps4 = vector.new(tArgs[10], tArgs[11], tArgs[12])
 
 local function toDegrees(angle)
-    yDegrees = math.asin(angle.y % (math.pi / 2))
+    yDegrees = math.asin(angle.y) / math.pi * 180
+    angle.x, angle.z = angle.x / math.cos(yDegrees), angle.z / math.cos(yDegrees)
 
 local function fromDegrees(x, y)
     local newVect = vector.new(math.sin(x), 0, math.cos(x))
